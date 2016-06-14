@@ -45,6 +45,13 @@ public class CrimeListFragment extends Fragment {
 
     }
 
+
+    @Override   //p201
+    public void onResume() {
+        super.onResume();
+        updateUI();
+    }
+
     private class CrimeHolder extends RecyclerView.ViewHolder
             implements View.OnClickListener {
 
@@ -72,8 +79,8 @@ public class CrimeListFragment extends Fragment {
 
         @Override
         public void onClick(View v) {
-            //p193
-            Intent intent = CrimeActivity.newIntent(getActivity(),mCrime.getId());
+            //p193 //p209
+            Intent intent = CrimePagerActivity.newIntent(getActivity(),mCrime.getId());
             startActivity(intent);
         }
     }
@@ -105,9 +112,4 @@ public class CrimeListFragment extends Fragment {
         }
     }
 
-    @Override   //p201
-    public void onResume() {
-        super.onResume();
-        updateUI();
-    }
 }
